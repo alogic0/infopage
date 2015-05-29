@@ -1,14 +1,16 @@
-Personal Site
+Site for
 =============
 
-This is the source code for [my personal site][ruudva].
+The source code for the site is based on [ruudva's page][ruudva].
 It is written in Haskell and uses the [Hakyll][hakyll] static site generator.
 
 [![Build Status][ci-img]][ci]
 
-My site was previously a [Jekyll][jekyll] site, and this is a port that tries
-to generate exactly the same site. This includes an archive that groups by
-year and pagination of the index. Drafts are supported by setting `draft: true`
+Some technical details
+----------------------
+
+This includes an archive that groups by year and pagination of the index. 
+Drafts are supported by setting `draft: true`
 in the front matter, and math is supported by setting `math: true`. The
 JavaScript for rendering math is only included on pages that actually use math.
 
