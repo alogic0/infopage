@@ -12,9 +12,9 @@ config = defaultConfiguration { ignoreFile = ignoreFile' }
 -- Details for the atom feed.
 feedConfig :: FeedConfiguration
 feedConfig = FeedConfiguration
-  { feedTitle       = "Ruud van Asseldonk"
-  , feedDescription = "Ruud van Asseldonk’s blog"
-  , feedAuthorName  = "Ruud van Asseldonk"
-  , feedAuthorEmail = "ruudva@veniogames.com"
-  , feedRoot        = "https://ruudvanasseldonk.com"
+  { feedTitle       = "компания Инфоресурс"
+  , feedDescription = "новости компании Инфоресурс"
+  , feedAuthorName  = "Инфоресурс"
+  , feedAuthorEmail = "alogic0@gmail.com"
+  , feedRoot        = "http://lgz.pp.ua"
   }

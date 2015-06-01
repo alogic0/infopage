@@ -1,8 +1,7 @@
 $partial("templates/top.html")$
     $for(posts)$
     <article itemscope>
-      <time datetime="$machinedate$" itemprop="datePublished">$humandate$</time>
-      <h1><a href="$url$">$title$</a></h1>
+      <h1><a href="$url$">$title$</a></h1> <time datetime="$machinedate$" itemprop="datePublished">$machinedate$</time>
       $if(teaser)$
       $teaser$
       <a href="$url$">Read on</a>

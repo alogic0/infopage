@@ -1,12 +1,13 @@
 module Site.Archive (archiveContext) where
 
-import Control.Applicative (empty)
+import Control.Applicative (empty, (<$>))
 import Data.Function (on)
 import Data.List (groupBy)
 import Data.Monoid ((<>))
 import Data.Time.Calendar
 import Data.Time.Clock
-import Data.Time.Format
+--import Data.Time.Format
+import Data.Time.Locale.Compat (defaultTimeLocale)
 import Hakyll
 import Site.Meta
 

@@ -15,6 +15,7 @@ import           Data.Monoid ((<>))
 import           Data.Time.Calendar (toGregorian)
 import           Data.Time.Clock
 import           Data.Time.Format
+import           Data.Time.Locale.Compat (defaultTimeLocale)
 import           Hakyll
 import           System.FilePath.Posix (takeFileName, dropExtension)
 
@@ -33,8 +34,8 @@ filterDraftItems = filterM (isNotDraft . itemIdentifier)
 stripIndexSuffix :: Item String -> Compiler (Item String)
 stripIndexSuffix = return . fmap (withUrls stripSuffix)
   where idx             = "/index.html"
-        domain          = "https://ruudvanasseldonk.com/"
-        domainidx       = "https://ruudvanasseldonk.com/index.html"
+        domain          = "http://lgz.pp.ua/"
+        domainidx       = "http://lgz.pp.ua/index.html"
         shouldStrip url = (("/" `isPrefixOf` url) || (domain `isPrefixOf` url)) &&
                           (idx `isSuffixOf` url)
         stripSuffix url

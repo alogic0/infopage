@@ -1,10 +1,8 @@
 Site for
 =============
 
-The source code for the site is based on [ruudva's page][ruudva].
+The source code for this site is based on [ruudva's page][ruudva].
 It is written in Haskell and uses the [Hakyll][hakyll] static site generator.
-
-[![Build Status][ci-img]][ci]
 
 Some technical details
 ----------------------
@@ -48,5 +46,5 @@ $ cabal run build
 Previewing the site:
 
 ```bash
-$ cabal run preview
+$ cabal run watch
 ```

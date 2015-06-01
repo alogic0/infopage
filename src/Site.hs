@@ -24,7 +24,7 @@ main = do
   -- Retrieve current year to put in the footer
   yearContext <- getYearContext
   let siteContext = yearContext <> defaultContext
-  let fullContext = constField "title" "Ruud van Asseldonk" <> siteContext
+  let fullContext = constField "title" "Инфоресурс" <> siteContext
 
   -- Run Hakyll
   hakyllWith config $ do
@@ -34,9 +34,16 @@ main = do
       compile compressCssCompiler
 
     sequence_ $ fmap staticFile
-      [ "style/*.woff", "style/*.png", "images/*", "favicon.png", ".htaccess" ]
+      [ "style/*.woff", "style/*.png", "images/*", "files/*", "favicon.ico", ".htaccess" ]
 
     match "templates/*" $ compile templateCompiler
+    
+    match "pages/*.md" $ do
+        route   $ setExtension "html"
+        compile $ pandocCompiler
+            >>= saveSnapshot "content"
+            >>= loadAndApplyTemplate "templates/pages.html" (postContext <> siteContext)
+            >>= relativizeUrls
 
     paginate <- buildPaginate "posts/*.md"
     paginateRules paginate $ \i _ -> do
